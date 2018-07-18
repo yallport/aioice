@@ -4,12 +4,28 @@ import argparse
 import asyncio
 import json
 import logging
-
 import aioice
 import websockets
+import colorlog
+
+
 
 STUN_SERVER = ('stun.l.google.com', 19302)
 WEBSOCKET_URI = 'ws://18.191.173.222:8765'
+
+
+# COLORLOG
+logger = colorlog.getLogger()
+logger.setLevel(colorlog.colorlog.logging.DEBUG)
+handler = colorlog.StreamHandler()
+handler.setFormatter(colorlog.ColoredFormatter())
+logger.addHandler(handler)
+logger.debug("Debug message")
+logger.info("Information message")
+logger.warning("Warning message")
+logger.error("Error message")
+logger.critical("Critical message")
+
 
 
 async def offer(options):
@@ -48,26 +64,24 @@ async def offer(options):
     print('received %s on component %d' % (repr(data), component))
 
 
-
-    # NEW
+    # PRINTING LOCAL AND REMOTE CANDIDATES
 
     local_candidates = connection.local_candidates
     remote_candidates = connection.remote_candidates
 
+
     for candidate in local_candidates:
-        print('local host:', candidate.host,
-              'local port: ', candidate.port,
-              'local type: ', candidate.type,
-              'local trans: ', candidate.transport)
-
+        log.info(f'''local host: {candidate.host}
+                    local port: {candidate.port}
+                    local type: {candidate.type}
+                    local trans: {candidate.transport}''')
     for candidate in remote_candidates:
-        print('remote host: ', candidate.host,
-              'remote port: ', candidate.port,
-              'remote type: ', candidate.type,
-              'remote trans: ', candidate.transport)
+        log.info(f'''remote host: {candidate.host}
+                    remote port: {candidate.port}
+                    remote type: {candidate.type}
+                    remote trans: {candidate.transport}''')
 
-    # END NEW
-
+    # END PRINTING
 
 
     await asyncio.sleep(5)
@@ -114,17 +128,18 @@ async def answer(options):
     local_candidates = connection.local_candidates
     remote_candidates = connection.remote_candidates
 
-    for candidate in local_candidates:
-        print('local host:', candidate.host,
-              'local port: ', candidate.port,
-              'local type: ', candidate.type,
-              'local trans: ', candidate.transport)
 
+    for candidate in local_candidates:
+        log.info(f'''local host: {candidate.host}
+                    local port: {candidate.port}
+                    local type: {candidate.type}
+                    local trans: {candidate.transport}''')
     for candidate in remote_candidates:
-        print('remote host: ', candidate.host,
-              'remote port: ', candidate.port,
-              'remote type: ', candidate.type,
-              'remote trans: ', candidate.transport)
+        log.info(f'''remote host: {candidate.host}
+                    remote port: {candidate.port}
+                    remote type: {candidate.type}
+                    remote trans: {candidate.transport}''')
+
 
     # END NEW
 
