@@ -52,7 +52,7 @@ async def offer(options):
     # NEW
 
     local_candidates = connection.local_candidates
-    remote_candidates = message['candidates']
+    remote_candidates = connection.remote_candidates
 
     for candidate in local_candidates:
         print('local host:', candidate.host,
@@ -112,7 +112,7 @@ async def answer(options):
     # NEW
 
     local_candidates = connection.local_candidates
-    remote_candidates = message['candidates']
+    remote_candidates = connection.remote_candidates
 
     for candidate in local_candidates:
         print('local host:', candidate.host,
