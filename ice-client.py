@@ -9,7 +9,7 @@ import aioice
 import websockets
 
 STUN_SERVER = ('stun.l.google.com', 19302)
-WEBSOCKET_URI = 'ws://127.0.0.1:8765'
+WEBSOCKET_URI = 'ws://18.191.173.222:8765'
 
 
 async def offer(options):
