@@ -1,12 +1,10 @@
-#!/usr/bin/env python
-
+import aioice
 import argparse
 import asyncio
+import colorlog
 import json
 import logging
-import aioice
 import websockets
-import colorlog
 
 
 
@@ -28,7 +26,7 @@ logger.error("Error message")
 logger.critical("Critical message")
 
 
-
+# ICE client offer
 async def offer(options):
     connection = aioice.Connection(ice_controlling=True,
                                    components=options.components,
@@ -57,7 +55,7 @@ async def offer(options):
     print('connected')
 
     # send data
-    data = b'hello'
+    data = b'HELLO'
     component = 1
     print('sending %s on component %d' % (repr(data), component))
     await connection.sendto(data, component)
@@ -65,7 +63,7 @@ async def offer(options):
     print('received %s on component %d' % (repr(data), component))
 
 
-    # PRINTING LOCAL AND REMOTE CANDIDATES
+    # print candidate info
 
     local_candidates = connection.local_candidates
     remote_candidates = connection.remote_candidates
@@ -82,13 +80,12 @@ async def offer(options):
                     remote type: {candidate.type}
                     remote trans: {candidate.transport}''')
 
-    # END PRINTING
-
 
     await asyncio.sleep(5)
     await connection.close()
 
 
+# ICE client answer
 async def answer(options):
     connection = aioice.Connection(ice_controlling=False,
                                    components=options.components,
@@ -124,7 +121,7 @@ async def answer(options):
 
 
 
-    # NEW
+    # print candidate info
 
     local_candidates = connection.local_candidates
     remote_candidates = connection.remote_candidates
@@ -140,9 +137,6 @@ async def answer(options):
                     remote port: {candidate.port}
                     remote type: {candidate.type}
                     remote trans: {candidate.transport}''')
-
-
-    # END NEW
 
 
 
