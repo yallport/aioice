@@ -72,12 +72,12 @@ async def offer(options):
 
 
     for candidate in local_candidates:
-        logger.info(f'''local host: {candidate.host}
+        logger.info(f'''local info: {candidate.host}
                     local port: {candidate.port}
                     local type: {candidate.type}
                     local trans: {candidate.transport}''')
     for candidate in remote_candidates:
-        logger.info(f'''remote host: {candidate.host}
+        logger.info(f'''remote info: {candidate.host}
                     remote port: {candidate.port}
                     remote type: {candidate.type}
                     remote trans: {candidate.transport}''')
@@ -131,12 +131,12 @@ async def answer(options):
 
 
     for candidate in local_candidates:
-        logger.info(f'''local host: {candidate.host}
+        logger.info(f'''local info: {candidate.host}
                     local port: {candidate.port}
                     local type: {candidate.type}
                     local trans: {candidate.transport}''')
     for candidate in remote_candidates:
-        logger.info(f'''remote host: {candidate.host}
+        logger.info(f'''remote info: {candidate.host}
                     remote port: {candidate.port}
                     remote type: {candidate.type}
                     remote trans: {candidate.transport}''')
