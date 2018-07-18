@@ -70,15 +70,23 @@ async def offer(options):
 
 
     for candidate in local_candidates:
-        logger.info(f'''local info: {candidate.host}
+        logger.info(f'''local info: {candidate.host} 
                     local port: {candidate.port}
                     local type: {candidate.type}
-                    local trans: {candidate.transport}''')
+                    local trans: {candidate.transport}
+                    local priority: {candidate.priority} #
+                    local foundation: {candidate.foundation} #
+                    local component: {candidate.component} #
+                    ''')
     for candidate in remote_candidates:
         logger.info(f'''remote info: {candidate.host}
                     remote port: {candidate.port}
                     remote type: {candidate.type}
-                    remote trans: {candidate.transport}''')
+                    remote trans: {candidate.transport}
+                    remote priority: {candidate.priority} #
+                    remote foundation: {candidate.foundation} #
+                    remote component: {candidate.component} #
+                    ''')
 
 
     await asyncio.sleep(5)
@@ -128,15 +136,23 @@ async def answer(options):
 
 
     for candidate in local_candidates:
-        logger.info(f'''local info: {candidate.host}
+        logger.info(f'''local info: {candidate.host} 
                     local port: {candidate.port}
                     local type: {candidate.type}
-                    local trans: {candidate.transport}''')
+                    local trans: {candidate.transport}
+                    local priority: {candidate.priority} #
+                    local foundation: {candidate.foundation} #
+                    local component: {candidate.component} #
+                    ''')
     for candidate in remote_candidates:
         logger.info(f'''remote info: {candidate.host}
                     remote port: {candidate.port}
                     remote type: {candidate.type}
-                    remote trans: {candidate.transport}''')
+                    remote trans: {candidate.transport}
+                    remote priority: {candidate.priority} #
+                    remote foundation: {candidate.foundation} #
+                    remote component: {candidate.component} #
+                    ''')
 
 
 
