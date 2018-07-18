@@ -20,6 +20,7 @@ logger.setLevel(colorlog.colorlog.logging.DEBUG)
 handler = colorlog.StreamHandler()
 handler.setFormatter(colorlog.ColoredFormatter())
 logger.addHandler(handler)
+
 logger.debug("Debug message")
 logger.info("Information message")
 logger.warning("Warning message")
@@ -71,12 +72,12 @@ async def offer(options):
 
 
     for candidate in local_candidates:
-        log.info(f'''local host: {candidate.host}
+        logger.info(f'''local host: {candidate.host}
                     local port: {candidate.port}
                     local type: {candidate.type}
                     local trans: {candidate.transport}''')
     for candidate in remote_candidates:
-        log.info(f'''remote host: {candidate.host}
+        logger.info(f'''remote host: {candidate.host}
                     remote port: {candidate.port}
                     remote type: {candidate.type}
                     remote trans: {candidate.transport}''')
@@ -130,12 +131,12 @@ async def answer(options):
 
 
     for candidate in local_candidates:
-        log.info(f'''local host: {candidate.host}
+        logger.info(f'''local host: {candidate.host}
                     local port: {candidate.port}
                     local type: {candidate.type}
                     local trans: {candidate.transport}''')
     for candidate in remote_candidates:
-        log.info(f'''remote host: {candidate.host}
+        logger.info(f'''remote host: {candidate.host}
                     remote port: {candidate.port}
                     remote type: {candidate.type}
                     remote trans: {candidate.transport}''')
