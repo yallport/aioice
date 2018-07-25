@@ -18,8 +18,6 @@ aioice [Documentation](https://aioice.readthedocs.io/en/stable/)
 ## Example
 
 
-.. code:: python
-
     #!/usr/bin/env python
 
     import asyncio
