@@ -6,7 +6,7 @@
 
 ICE using [jlaine's aioice library](https://github.com/jlaine/aioice). 
 
-I edited the code so that the terminal outputs are more "pretty." Candidates are organized and in a different color, and the connection messages are more obvious.
+I edited the code so that the terminal outputs are more "pretty," and so that more candidate information is printed. Candidates are organized and in a different color, and the connection messages are more obvious.
 
 aioice is a library for Interactive Connectivity Establishment (RFC 5245) in Python. It is built on top of asyncio, Python's standard asynchronous I/O framework.
 
