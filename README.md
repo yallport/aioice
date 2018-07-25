@@ -12,6 +12,7 @@ aioice is a library for Interactive Connectivity Establishment (RFC 5245) in Pyt
 
 Interactive Connectivity Establishment (ICE) is useful for applications that establish peer-to-peer UDP data streams, as it facilitates NAT traversal. Typical usecases include SIP and WebRTC.
 
+aioice [Documentation](https://aioice.readthedocs.io/en/stable/)
 
 
 ## Example
@@ -54,7 +55,6 @@ Interactive Connectivity Establishment (ICE) is useful for applications that est
 
     asyncio.get_event_loop().run_until_complete(connect_using_ice())
 
-[Documentation](https://aioice.readthedocs.io/en/stable/)
 
 
 ## License
